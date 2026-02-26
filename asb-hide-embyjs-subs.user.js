@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Emby: Hide Native Subs When asbplayer Subs Are Active
 // @namespace    https://github.com/bpwhelan/asb-hide-embyjs-subs
-// @version      1.0.1
+// @version      1.0.0
 // @description  Hides Emby/Jellyfin native subtitle overlay whenever asbplayer bottom subtitles container exists.
 // @author       Beangate
 // @updateURL    https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjs-subs/main/asb-hide-embyjs-subs.user.js
@@ -47,6 +47,17 @@
     document.getElementById(STYLE_ID)?.remove();
   }
 
+  function disableTextTracks() {
+    const video = document.querySelector('video');
+    if (!video) return;
+
+    [...video.textTracks].forEach((t) => (t.mode = 'disabled'));
+    video.querySelectorAll('track').forEach((t) => {
+      t.default = false;
+      t.removeAttribute('default');
+    });
+  }
+
   function hideNow() {
     document.querySelectorAll(EMBY_SUB_SELECTOR).forEach((el) => {
       const e = /** @type {HTMLElement} */ (el);
@@ -59,6 +70,8 @@
     document.querySelectorAll('video.moveUpSubtitles').forEach((video) => {
       video.classList.remove('moveUpSubtitles');
     });
+
+    disableTextTracks();
   }
 
   function apply() {
