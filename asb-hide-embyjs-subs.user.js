@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Emby: Hide Native Subs When asbplayer Subs Are Active
 // @namespace    https://github.com/bpwhelan/asb-hide-embyjs-subs
-// @version      1.0.0
+// @version      1.0.1
 // @description  Hides Emby/Jellyfin native subtitle overlay whenever asbplayer bottom subtitles container exists.
 // @author       Beangate
 // @updateURL    https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjs-subs/main/asb-hide-embyjs-subs.user.js
