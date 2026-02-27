@@ -1,4 +1,4 @@
-# asb-hide-embyjs-subs
+# asb-hide-embyjf-subs
 
 A userscript that automatically hides Emby/Jellyfin's native subtitle overlay whenever [asbplayer](https://github.com/killergerbah/asbplayer) subtitles are active. Prevents double subtitles from stacking on screen when using asbplayer alongside Emby or Jellyfin.
 
@@ -9,7 +9,7 @@ The script watches the DOM for the presence of asbplayer's bottom subtitle conta
 ## Installation
 
 1. Install a userscript manager. [Violentmonkey](https://violentmonkey.github.io/) is recommended — it is open source and actively maintained. Tampermonkey and Greasemonkey should work as well.
-2. Click **[Install Script](https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjs-subs/main/asb-hide-embyjs-subs.user.js)** — your userscript manager will intercept the `.user.js` URL and prompt you to install.
+2. Click **[Install Script](https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjf-subs/main/asb-hide-embyjf-subs.user.js)** — your userscript manager will intercept the `.user.js` URL and prompt you to install.
 3. Confirm the installation.
 
 The script includes `@updateURL` and `@downloadURL` headers, so Violentmonkey (and Tampermonkey) can check for and apply updates automatically from this repository.

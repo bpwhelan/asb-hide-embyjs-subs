@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Emby: Hide Native Subs When asbplayer Subs Are Active
-// @namespace    https://github.com/bpwhelan/asb-hide-embyjs-subs
+// @namespace    https://github.com/bpwhelan/asb-hide-embyjf-subs
 // @version      1.0.0
 // @description  Hides Emby/Jellyfin native subtitle overlay whenever asbplayer bottom subtitles container exists.
 // @author       Beangate
-// @updateURL    https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjs-subs/main/asb-hide-embyjs-subs.user.js
-// @downloadURL  https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjs-subs/main/asb-hide-embyjs-subs.user.js
+// @updateURL    https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjf-subs/main/asb-hide-embyjf-subs.user.js
+// @downloadURL  https://raw.githubusercontent.com/bpwhelan/asb-hide-embyjf-subs/main/asb-hide-embyjf-subs.user.js
 // @match        *://*/web/index.html*
 // @match        *://*/web/
 // @run-at       document-start
@@ -17,7 +17,7 @@
 
   const ASB_SELECTOR = '.asbplayer-subtitles-container-bottom';
   const EMBY_SUB_SELECTOR = '.videoSubtitles, [class*="videoSubtitles"]';
-  const STYLE_ID = 'tm-asb-hide-embyjs-subs';
+  const STYLE_ID = 'tm-asb-hide-embyjf-subs';
 
   function isTargetPage() {
     const path = location.pathname;
