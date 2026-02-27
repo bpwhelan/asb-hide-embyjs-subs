@@ -1,10 +1,10 @@
 # asb-hide-embyjf-subs
 
-A userscript that automatically hides Emby/Jellyfin's native subtitle overlay whenever [asbplayer](https://github.com/killergerbah/asbplayer) subtitles are active. Prevents double subtitles from stacking on screen when using asbplayer alongside Emby or Jellyfin.
+A userscript that automatically hides Emby/Jellyfin/Plex native subtitle overlays whenever [asbplayer](https://github.com/killergerbah/asbplayer) subtitles are active. Prevents double subtitles from stacking on screen when using asbplayer alongside Emby, Jellyfin, or Plex.
 
 ## How It Works
 
-The script watches the DOM for the presence of asbplayer's bottom subtitle container. When detected, it injects a CSS rule to suppress Emby/Jellyfin's `.videoSubtitles` overlay and removes the `moveUpSubtitles` class from the video element. When asbplayer subtitles are absent, the native subtitles are restored to normal behaviour.
+The script watches the DOM for the presence of asbplayer's bottom subtitle container. When detected, it injects a CSS rule to suppress native subtitle overlays (`.videoSubtitles` for Emby/Jellyfin and `.libjass-subs` for Plex) and removes the `moveUpSubtitles` class from the video element. When asbplayer subtitles are absent, the native subtitles are restored to normal behaviour.
 
 ## Installation
 
@@ -16,10 +16,10 @@ The script includes `@updateURL` and `@downloadURL` headers, so Violentmonkey (a
 
 ## Requirements
 
-- An Emby or Jellyfin server running its standard web client (`/web/index.html`)
+- An Emby, Jellyfin, or Plex server running its standard web client
 - [asbplayer](https://github.com/killergerbah/asbplayer) browser extension installed and active
 
-The script matches `*://*/web/index.html*` (Emby) or `://*/web/` (Jellyfin) so it will run on any Emby or Jellyfin instance regardless of host or port.
+The script matches `*://*/web/index.html*` (Emby/Plex) and `*://*/web/` (Jellyfin), then activates on the SPA routes used for playback.
 
 ## Notes
 
